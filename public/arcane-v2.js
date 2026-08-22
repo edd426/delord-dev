@@ -253,6 +253,39 @@
     }, { passive: true });
   }
 
+  /* ---------- repulsion ---------- */
+  /* The candle's light frightens the tentacles — but only while it moves.
+     A waved cursor near the corner makes them recoil into the miasma; held
+     still, they lose their fear after a couple of seconds and creep back. */
+  var FEAR_RADIUS = 300;
+  var FEAR_STILL_MS = 1800;
+  var fearTimer = null;
+
+  function startRepulsion() {
+    if (noHover || reducedMotion) return;
+    function cornerDistance(x, y) {
+      if (!corner) return Infinity;
+      var r = corner.getBoundingClientRect();
+      var dx = Math.max(r.left - x, 0, x - r.right);
+      var dy = Math.max(r.top - y, 0, y - r.bottom);
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+    listen(document, 'mousemove', function (e) {
+      if (!corner) return;
+      if (cornerDistance(e.clientX, e.clientY) < FEAR_RADIUS) {
+        corner.classList.add('av2-fear');
+      } else {
+        corner.classList.remove('av2-fear');
+      }
+      if (fearTimer) clearTimeout(fearTimer);
+      // a still candle stops frightening them, even up close
+      fearTimer = setTimeout(function () {
+        fearTimer = null;
+        if (corner) corner.classList.remove('av2-fear');
+      }, FEAR_STILL_MS);
+    }, { passive: true });
+  }
+
   /* ---------- tentacles ---------- */
   var tentPaths = [
     '<path d="M300 305 C 255 265, 275 210, 232 168 C 210 146, 218 118, 236 100 C 246 90, 244 76, 236 68" fill="none" stroke="#1d2c22" stroke-width="11" stroke-linecap="round"/>',
@@ -378,6 +411,7 @@
       startGaze();
       startCandleGlow();
       buildCorner();
+      startRepulsion();
     });
   }
 
@@ -397,6 +431,7 @@
     corner = null;
     shroud = null;
     clearPhaseTimers();
+    if (fearTimer) { clearTimeout(fearTimer); fearTimer = null; }
   }
 
   window.arcaneV2 = { enable: enable, disable: disable };
