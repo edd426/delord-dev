@@ -42,6 +42,9 @@ const jsonLd = JSON.stringify({
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link id="favicon" rel="icon" type="image/svg+xml" href={forceArcane ? '/favicon-arcane.svg' : '/favicon.svg'} />
+    <link rel="icon" type="image/png" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="delord.dev" href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script type="application/ld+json" set:html={jsonLd} />
@@ -55,7 +58,11 @@ const jsonLd = JSON.stringify({
         }
         stage = Math.max(0, Math.min(3, stage));
         if (stage > 0) document.documentElement.setAttribute('data-candle-stage', String(stage));
-        if (stage === 3) document.documentElement.setAttribute('data-theme', 'arcane');
+        if (stage === 3) {
+          document.documentElement.setAttribute('data-theme', 'arcane');
+          var fav = document.getElementById('favicon');
+          if (fav) fav.href = '/favicon-arcane.svg';
+        }
       } catch (e) {}
     </script>
     <style is:inline>
@@ -94,6 +101,8 @@ const jsonLd = JSON.stringify({
             root.removeAttribute('data-theme');
             if (window.arcaneV2) window.arcaneV2.disable();
           }
+          var fav = document.getElementById('favicon');
+          if (fav) fav.href = (forced || stage === 3) ? '/favicon-arcane.svg' : '/favicon.svg';
           try { localStorage.setItem('candle-stage', String(stage)); } catch (e) {}
         }
         var btn = document.getElementById('candle');
