@@ -69,6 +69,7 @@ const jsonLd = JSON.stringify({
     <script is:inline>
       (function () {
         var root = document.documentElement;
+        var forced = root.hasAttribute('data-force-arcane');
         function getStage() {
           var s = parseInt(root.getAttribute('data-candle-stage') || '0', 10);
           return isNaN(s) ? 0 : s;
@@ -78,7 +79,7 @@ const jsonLd = JSON.stringify({
             .then(function () {
               if (!window.arcaneV2) return;
               // the stage may have changed while the chunk was loading
-              if (getStage() === 3) window.arcaneV2.enable();
+              if (forced || getStage() === 3) window.arcaneV2.enable();
               else window.arcaneV2.disable();
             })
             .catch(function () {});
@@ -89,15 +90,15 @@ const jsonLd = JSON.stringify({
           if (stage === 3) {
             root.setAttribute('data-theme', 'arcane');
             loadV2();
-          } else {
-            if (!root.hasAttribute('data-force-arcane')) root.removeAttribute('data-theme');
+          } else if (!forced) {
+            root.removeAttribute('data-theme');
             if (window.arcaneV2) window.arcaneV2.disable();
           }
           try { localStorage.setItem('candle-stage', String(stage)); } catch (e) {}
         }
         var btn = document.getElementById('candle');
         if (btn) btn.addEventListener('click', function () { apply((getStage() + 1) % 4); });
-        if (getStage() === 3) loadV2();
+        if (forced || getStage() === 3) loadV2();
       })();
     </script>
   </body>

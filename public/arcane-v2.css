@@ -27,6 +27,35 @@
 }
 .av2-eye--grim.av2-in { opacity: 0.62; }
 
+/* candlelight halo carried with the cursor */
+.av2-glow {
+  position: fixed;
+  left: -300px;
+  top: -300px;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: 3;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(232, 181, 77, 0.10) 0%,
+    rgba(232, 181, 77, 0.05) 35%,
+    rgba(201, 168, 92, 0.02) 55%,
+    transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  will-change: transform;
+}
+.av2-glow--lit { opacity: 1; }
+.av2-glow--static {
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: none;
+}
+
 .av2-corner {
   position: fixed;
   right: 0;

@@ -221,6 +221,38 @@
     }, { passive: true });
   }
 
+  /* ---------- candlelight glow ---------- */
+  /* A warm halo follows the cursor — reading by candlelight. */
+  function startCandleGlow() {
+    if (noHover) return; // touch devices: no cursor, no glow
+    var glow = document.createElement('div');
+    glow.className = 'av2-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(glow);
+    nodes.push(glow);
+    if (reducedMotion) {
+      // static centered vignette-glow instead of a tracked halo
+      glow.classList.add('av2-glow--static');
+      return;
+    }
+    var tx = window.innerWidth / 2, ty = window.innerHeight / 3;
+    var gx = tx, gy = ty, raf = null, seen = false;
+    function step() {
+      raf = null;
+      if (!active) return;
+      // ease toward the cursor: the candle is carried, not teleported
+      gx += (tx - gx) * 0.12;
+      gy += (ty - gy) * 0.12;
+      glow.style.transform = 'translate(' + gx.toFixed(1) + 'px, ' + gy.toFixed(1) + 'px)';
+      if (Math.abs(tx - gx) > 0.5 || Math.abs(ty - gy) > 0.5) raf = requestAnimationFrame(step);
+    }
+    listen(document, 'mousemove', function (e) {
+      tx = e.clientX; ty = e.clientY;
+      if (!seen) { seen = true; glow.classList.add('av2-glow--lit'); }
+      if (!raf) raf = requestAnimationFrame(step);
+    }, { passive: true });
+  }
+
   /* ---------- tentacles ---------- */
   var tentPaths = [
     '<path d="M300 305 C 255 265, 275 210, 232 168 C 210 146, 218 118, 236 100 C 246 90, 244 76, 236 68" fill="none" stroke="#1d2c22" stroke-width="11" stroke-linecap="round"/>',
@@ -295,6 +327,7 @@
       narrow = window.matchMedia('(max-width: 700px)').matches;
       startEscalation();
       startGaze();
+      startCandleGlow();
       buildCorner();
     });
   }
