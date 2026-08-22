@@ -10,11 +10,15 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  forceArcane?: boolean;
+  noindex?: boolean;
 }
 
 const {
   title = 'Evan DeLord — platform engineer',
   description = 'Evan DeLord is a platform engineer working on cloud infrastructure and careful measurement of AI coding agents.',
+  forceArcane = false,
+  noindex = false,
 } = Astro.props;
 
 const jsonLd = JSON.stringify({
@@ -30,12 +34,13 @@ const jsonLd = JSON.stringify({
 });
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme={forceArcane ? 'arcane' : undefined} data-force-arcane={forceArcane ? '' : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="alternate" type="application/rss+xml" title="delord.dev" href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -70,7 +75,12 @@ const jsonLd = JSON.stringify({
         }
         function loadV2() {
           import('/arcane-v2.js')
-            .then(function () { if (window.arcaneV2) window.arcaneV2.enable(); })
+            .then(function () {
+              if (!window.arcaneV2) return;
+              // the stage may have changed while the chunk was loading
+              if (getStage() === 3) window.arcaneV2.enable();
+              else window.arcaneV2.disable();
+            })
             .catch(function () {});
         }
         function apply(stage) {
@@ -80,7 +90,7 @@ const jsonLd = JSON.stringify({
             root.setAttribute('data-theme', 'arcane');
             loadV2();
           } else {
-            root.removeAttribute('data-theme');
+            if (!root.hasAttribute('data-force-arcane')) root.removeAttribute('data-theme');
             if (window.arcaneV2) window.arcaneV2.disable();
           }
           try { localStorage.setItem('candle-stage', String(stage)); } catch (e) {}

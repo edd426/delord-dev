@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import Fleur from '../components/Fleur.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base
+  title="Grimoire — delord.dev"
+  description="The colophon's dark twin."
+  forceArcane={true}
+  noindex={true}
+>
+  <div class="page">
+    <div class="frame">
+      <main class="main">
+        <div class="brand"><a href="/">DeLord<span>.dev</span></a></div>
+        <div class="section-label" style="width: auto;">Grimoire</div>
+        <h1 class="name" style="font-size: 40px; margin-top: 8px;">You found the way in</h1>
+        <Fleur />
+        <div class="stub">
+          <p>Most visitors read the archive by daylight and leave. You lit the candle — once for the wax, once for the flame, once for the dark — and one of the eyes that wander these margins does not blink. You followed it here.</p>
+          <p>That is the whole mechanism: a candle in the footer, a ritual of three, eyes that grow bolder the longer you stay, and something patient in the bottom corner. Nothing tracks you, nothing phones home. The page only watches back.</p>
+          <p>The plain accounting is kept in the <a href="/colophon">colophon</a>: Newsreader and Source Sans 3, hand-bound with Astro, shelved with Cloudflare. The findings are shared. The answer keys stay sealed, as all true grimoires are.</p>
+        </div>
+        <Footer />
+      </main>
+    </div>
+  </div>
+</Base>
