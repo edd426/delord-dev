@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+import Fleur from '../components/Fleur.astro';
+import Footer from '../components/Footer.astro';
+---
+<Base>
+  <div class="page">
+    <div class="frame">
+      <main class="main">
+        <div class="brand">DeLord<span>.dev</span></div>
+        <h1 class="name">Evan DeLord</h1>
+        <p class="tagline">
+          <span class="only-default">Platform engineer. Cloud infrastructure, and lately a lot of careful measurement of AI coding agents.</span>
+          <span class="only-arcane">Platform engineer. Keeper of measured experiments on artificial minds.</span>
+        </p>
+        <Fleur />
+        <div class="sections">
+          <div class="section-row">
+            <div class="section-label"><span class="only-default">Work</span><span class="only-arcane">Works</span></div>
+            <div class="section-body">
+              <a href="/work" class="section-title"><span class="only-default">Projects &amp; portfolio</span><span class="only-arcane">Constructions</span></a>
+              <div class="section-desc">
+                <span class="only-default">Cloud platform work, side projects, and the occasional experiment that graduated to a repo.</span>
+                <span class="only-arcane">In cloud and code. Sources kept openly at GitHub, under edd426.</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-row">
+            <div class="section-label"><span class="only-default">Research</span><span class="only-arcane">Research</span></div>
+            <div class="section-body research">
+              <a href="/research" class="section-title"><span class="only-default">Notes on AI agents</span><span class="only-arcane">Investigations</span></a>
+              <ul class="post-list">
+                <li>Your answer key is an instrument too, and it drifts<span class="forthcoming">forthcoming</span></li>
+                <li>Turning the effort dial up doesn't make the agent smarter<span class="forthcoming">forthcoming</span></li>
+                <li>A fail bit in the loop beat a paragraph of advice<span class="forthcoming">forthcoming</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="section-row">
+            <div class="section-label"><span class="only-default">Essays</span><span class="only-arcane">Essays</span></div>
+            <div class="section-body">
+              <a href="/essays" class="section-title"><span class="only-default">Occasional writing</span><span class="only-arcane">Reflections</span></a>
+              <div class="section-desc">
+                <span class="only-default">On decision-making, complex systems, and other things I think about away from the keyboard.</span>
+                <span class="only-arcane">On judgment, systems, and the habits of clear thinking.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </main>
+      <aside class="marginalia">
+        <div class="lead">
+          <span class="only-default">Marginalia: the short version.</span>
+          <span class="only-arcane">Marginalia, by candlelight.</span>
+        </div>
+        <div class="note">
+          <span class="only-default">Azure &amp; platform engineering by day. Agent experiments by night. Charts before claims.</span>
+          <span class="only-arcane">You found the candle. The archive keeps the same shelves — only the light has changed.</span>
+        </div>
+        <div class="note">
+          <span class="only-default">Findings published here; answer keys stay sealed<span class="star">*</span> so the benchmark survives.</span>
+          <span class="only-arcane">The findings are shared. The answer keys stay sealed, as all true grimoires are.</span>
+        </div>
+        <div class="aside only-default">* some things on this site are better found than shown.</div>
+        <div class="place">
+          <span class="only-default">Budapest, 2026</span>
+          <span class="only-arcane">Budapest, MMXXVI</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

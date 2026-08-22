@@ -1,0 +1,77 @@
+---
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/500.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/newsreader/400-italic.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Evan DeLord — platform engineer',
+  description = 'Evan DeLord is a platform engineer working on cloud infrastructure and careful measurement of AI coding agents.',
+} = Astro.props;
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Evan DeLord',
+  jobTitle: 'Platform Engineer',
+  url: 'https://delord.dev',
+  sameAs: [
+    'https://github.com/edd426',
+    'https://www.linkedin.com/in/eddelord',
+  ],
+});
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="alternate" type="application/rss+xml" title="delord.dev" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={jsonLd} />
+    <script is:inline>
+      try {
+        if (localStorage.getItem('theme') === 'arcane') {
+          document.documentElement.setAttribute('data-theme', 'arcane');
+        }
+      } catch (e) {}
+    </script>
+    <style is:inline>
+      .only-arcane { display: none; }
+      [data-theme="arcane"] .only-arcane { display: revert; }
+      [data-theme="arcane"] .only-default { display: none; }
+    </style>
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('candle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var root = document.documentElement;
+          var arcane = root.getAttribute('data-theme') === 'arcane';
+          if (arcane) {
+            root.removeAttribute('data-theme');
+          } else {
+            root.setAttribute('data-theme', 'arcane');
+          }
+          try {
+            localStorage.setItem('theme', arcane ? 'default' : 'arcane');
+          } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>
