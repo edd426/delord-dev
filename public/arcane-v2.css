@@ -1,10 +1,12 @@
 /* Arcane v2 — loaded only at candle stage 3 */
 
 .av2-eye {
+  position: fixed;
+  z-index: 2;
   pointer-events: none;
   line-height: 0;
   opacity: 0;
-  transition: opacity 2.5s ease;
+  transition: opacity 1s ease;
 }
 .av2-eye.av2-in { opacity: 0.55; }
 .av2-eye svg { display: block; }
@@ -14,11 +16,6 @@
   transition: transform 0.09s ease-in;
 }
 .av2-eye.av2-blink .av2-lid { transform: scaleY(0.06); }
-
-.av2-eye--fixed { position: fixed; z-index: 2; }
-.av2-eye--separator { position: absolute; right: -34px; top: 0; }
-.separator { position: relative; }
-.av2-eye--marginalia { margin-top: 8px; }
 
 .av2-corner {
   position: fixed;
@@ -89,7 +86,6 @@
 }
 
 @media (max-width: 700px) {
-  .av2-eye--fixed { display: none; }
   .av2-corner { width: 40vw; height: 22vh; max-width: 40vw; max-height: 22vh; }
 }
 
