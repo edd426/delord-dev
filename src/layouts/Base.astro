@@ -46,6 +46,7 @@ const jsonLd = JSON.stringify({
         if (isNaN(stage)) {
           stage = localStorage.getItem('theme') === 'arcane' ? 3 : 0;
           localStorage.removeItem('theme');
+          localStorage.setItem('candle-stage', String(stage));
         }
         stage = Math.max(0, Math.min(3, stage));
         if (stage > 0) document.documentElement.setAttribute('data-candle-stage', String(stage));

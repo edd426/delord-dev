@@ -160,9 +160,9 @@ h1.name {
   align-items: center;
   gap: 10px;
 }
-.footer .est svg .candle-flame,
-.footer .est svg .candle-wick,
-.footer .est svg .candle-holder {
+.candle-flame,
+.candle-wick,
+.candle-holder {
   stroke: var(--glyph);
   fill: none;
   transition: stroke 0.6s ease, fill 0.6s ease, filter 0.6s ease;
