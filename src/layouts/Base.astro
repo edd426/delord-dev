@@ -43,7 +43,7 @@ const jsonLd = JSON.stringify({
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link id="favicon" rel="icon" type="image/svg+xml" href={forceArcane ? '/favicon-arcane.svg' : '/favicon.svg'} />
-    <link rel="icon" type="image/png" href="/favicon-32.png" />
+    <link id="favicon-png" rel="icon" type="image/png" href={forceArcane ? '/favicon-arcane-32.png' : '/favicon-32.png'} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="delord.dev" href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -61,7 +61,9 @@ const jsonLd = JSON.stringify({
         if (stage === 3) {
           document.documentElement.setAttribute('data-theme', 'arcane');
           var fav = document.getElementById('favicon');
+          var favPng = document.getElementById('favicon-png');
           if (fav) fav.href = '/favicon-arcane.svg';
+          if (favPng) favPng.href = '/favicon-arcane-32.png';
         }
       } catch (e) {}
     </script>
@@ -101,8 +103,18 @@ const jsonLd = JSON.stringify({
             root.removeAttribute('data-theme');
             if (window.arcaneV2) window.arcaneV2.disable();
           }
-          var fav = document.getElementById('favicon');
-          if (fav) fav.href = (forced || stage === 3) ? '/favicon-arcane.svg' : '/favicon.svg';
+          var arcaneIcon = forced || stage === 3;
+          // set both icon links, then replace the nodes — Chrome can ignore
+          // in-place href changes on icon links
+          [
+            ['favicon', arcaneIcon ? '/favicon-arcane.svg' : '/favicon.svg'],
+            ['favicon-png', arcaneIcon ? '/favicon-arcane-32.png' : '/favicon-32.png']
+          ].forEach(function (pair) {
+            var l = document.getElementById(pair[0]);
+            if (!l || !l.parentNode) return;
+            l.href = pair[1];
+            l.parentNode.replaceChild(l.cloneNode(), l);
+          });
           try { localStorage.setItem('candle-stage', String(stage)); } catch (e) {}
         }
         var btn = document.getElementById('candle');
