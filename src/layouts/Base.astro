@@ -42,9 +42,14 @@ const jsonLd = JSON.stringify({
     <script type="application/ld+json" set:html={jsonLd} />
     <script is:inline>
       try {
-        if (localStorage.getItem('theme') === 'arcane') {
-          document.documentElement.setAttribute('data-theme', 'arcane');
+        var stage = parseInt(localStorage.getItem('candle-stage'), 10);
+        if (isNaN(stage)) {
+          stage = localStorage.getItem('theme') === 'arcane' ? 3 : 0;
+          localStorage.removeItem('theme');
         }
+        stage = Math.max(0, Math.min(3, stage));
+        if (stage > 0) document.documentElement.setAttribute('data-candle-stage', String(stage));
+        if (stage === 3) document.documentElement.setAttribute('data-theme', 'arcane');
       } catch (e) {}
     </script>
     <style is:inline>
@@ -57,20 +62,31 @@ const jsonLd = JSON.stringify({
     <slot />
     <script is:inline>
       (function () {
-        var btn = document.getElementById('candle');
-        if (!btn) return;
-        btn.addEventListener('click', function () {
-          var root = document.documentElement;
-          var arcane = root.getAttribute('data-theme') === 'arcane';
-          if (arcane) {
-            root.removeAttribute('data-theme');
-          } else {
+        var root = document.documentElement;
+        function getStage() {
+          var s = parseInt(root.getAttribute('data-candle-stage') || '0', 10);
+          return isNaN(s) ? 0 : s;
+        }
+        function loadV2() {
+          import('/arcane-v2.js')
+            .then(function () { if (window.arcaneV2) window.arcaneV2.enable(); })
+            .catch(function () {});
+        }
+        function apply(stage) {
+          if (stage > 0) root.setAttribute('data-candle-stage', String(stage));
+          else root.removeAttribute('data-candle-stage');
+          if (stage === 3) {
             root.setAttribute('data-theme', 'arcane');
+            loadV2();
+          } else {
+            root.removeAttribute('data-theme');
+            if (window.arcaneV2) window.arcaneV2.disable();
           }
-          try {
-            localStorage.setItem('theme', arcane ? 'default' : 'arcane');
-          } catch (e) {}
-        });
+          try { localStorage.setItem('candle-stage', String(stage)); } catch (e) {}
+        }
+        var btn = document.getElementById('candle');
+        if (btn) btn.addEventListener('click', function () { apply((getStage() + 1) % 4); });
+        if (getStage() === 3) loadV2();
       })();
     </script>
   </body>

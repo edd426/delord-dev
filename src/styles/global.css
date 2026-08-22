@@ -160,7 +160,45 @@ h1.name {
   align-items: center;
   gap: 10px;
 }
-.footer .est svg { stroke: var(--glyph); }
+.footer .est svg .candle-flame,
+.footer .est svg .candle-wick,
+.footer .est svg .candle-holder {
+  stroke: var(--glyph);
+  fill: none;
+  transition: stroke 0.6s ease, fill 0.6s ease, filter 0.6s ease;
+}
+
+/* Candle ritual, stage 1: the candlestick warms */
+[data-candle-stage="1"] .candle-holder,
+[data-candle-stage="2"] .candle-holder,
+[data-candle-stage="3"] .candle-holder {
+  stroke: #b9835a;
+  fill: rgba(220, 172, 116, 0.28);
+}
+[data-candle-stage="2"] .candle-wick,
+[data-candle-stage="3"] .candle-wick { stroke: #8a6a48; }
+
+/* Stage 2: the flame catches */
+[data-candle-stage="2"] .candle-flame,
+[data-candle-stage="3"] .candle-flame {
+  stroke: #d9a441;
+  fill: rgba(232, 181, 77, 0.45);
+  filter: drop-shadow(0 0 3px rgba(232, 181, 77, 0.7));
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: flame-flicker 2.8s ease-in-out infinite;
+}
+
+@keyframes flame-flicker {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  30% { opacity: 0.82; transform: scaleY(0.95) scaleX(0.97); }
+  55% { opacity: 0.95; transform: scaleY(1.04); }
+  75% { opacity: 0.88; transform: scaleY(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .candle-flame { animation: none !important; }
+}
 .footer .est-text { font-size: 13px; color: var(--faint); }
 
 .candle-toggle {
