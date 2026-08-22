@@ -301,14 +301,63 @@
     listen(window, 'resize', apply, { passive: true });
   }
 
-  /* Idle creep: after 120s without activity the miasma swells and a fourth,
-     thinner tentacle emerges; any activity retracts it. */
+  /* Idle creep: escalating phases while the tab sits untouched in stage 3.
+     Phase 1 (120s): the miasma swells and a fourth tentacle emerges.
+     Phase 2 (180s): darkness spreads from the corner toward half the viewport,
+     the tentacles growing. Phase 3 (260s): near-takeover — ~70-80% shrouded,
+     tentacles rising from the bottom edge, the periphery failing like a dying
+     candle. Any activity makes the whole thing withdraw, reluctantly. */
+  var IDLE_PHASE1_MS = 120000;
+  var IDLE_PHASE2_MS = 180000;
+  var IDLE_PHASE3_MS = 260000;
+  var shroud = null;
+  var phaseTimers = [];
+
+  function buildShroud() {
+    var s = document.createElement('div');
+    s.className = 'av2-shroud';
+    s.setAttribute('aria-hidden', 'true');
+    s.innerHTML =
+      '<div class="av2-shroud-layer l1"></div>' +
+      '<div class="av2-shroud-layer l2"></div>' +
+      '<div class="av2-vignette"></div>' +
+      '<svg class="av2-shroud-tents" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMax slice">' +
+      '<g class="av2-tent s1"><path d="M230 520 C 215 430, 255 370, 235 290 C 222 240, 244 205, 262 190" fill="none" stroke="#16211a" stroke-width="15" stroke-linecap="round"/></g>' +
+      '<g class="av2-tent s2"><path d="M640 520 C 660 440, 620 390, 645 320 C 660 278, 640 240, 615 228" fill="none" stroke="#1b2a20" stroke-width="10" stroke-linecap="round"/></g>' +
+      '</svg>';
+    document.body.appendChild(s);
+    nodes.push(s);
+    shroud = s;
+  }
+
+  function setPhase(p) {
+    if (corner) {
+      corner.classList.toggle('av2-idle', p >= 1);
+      corner.classList.toggle('av2-idle2', p >= 2);
+      corner.classList.toggle('av2-idle3', p >= 3);
+    }
+    if (shroud) {
+      shroud.classList.toggle('av2-shroud--p2', p >= 2);
+      shroud.classList.toggle('av2-shroud--p3', p >= 3);
+    }
+  }
+
+  function clearPhaseTimers() {
+    phaseTimers.forEach(clearTimeout);
+    phaseTimers = [];
+  }
+
   function startIdleCreep(c) {
-    function goIdle() { c.classList.add('av2-idle'); }
+    if (reducedMotion) return; // static miasma only, no creep phases
+    buildShroud();
     function wake() {
-      c.classList.remove('av2-idle');
-      if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = later(goIdle, 120000);
+      setPhase(0); // withdrawal runs on the base transitions (~4-6s)
+      clearPhaseTimers();
+      phaseTimers.push(setTimeout(function () { setPhase(1); }, IDLE_PHASE1_MS));
+      phaseTimers.push(setTimeout(function () { setPhase(2); }, IDLE_PHASE2_MS));
+      if (!narrow) { // mobile is capped at phase 2 scale
+        phaseTimers.push(setTimeout(function () { setPhase(3); }, IDLE_PHASE3_MS));
+      }
     }
     ['pointermove', 'pointerdown', 'scroll', 'keydown'].forEach(function (t) {
       listen(window, t, wake, { passive: true });
@@ -346,6 +395,8 @@
     occupied = {};
     grimSpawned = false;
     corner = null;
+    shroud = null;
+    clearPhaseTimers();
   }
 
   window.arcaneV2 = { enable: enable, disable: disable };
