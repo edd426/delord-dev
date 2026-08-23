@@ -237,7 +237,10 @@ h1.name {
 
 @media (max-width: 900px) {
   .frame { flex-direction: column; gap: 40px; padding-top: 56px; }
-  .main { max-width: none; min-height: 0; }
+  /* in a column frame the row flex-basis (660px) would become a fixed
+     height and the content would overflow onto the marginalia */
+  .main { flex: 0 0 auto; max-width: none; min-height: 0; }
+  .candle-toggle { padding: 12px; margin: -12px; }
   .footer { margin-top: 48px; }
   .marginalia {
     width: 100%;
