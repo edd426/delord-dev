@@ -228,14 +228,6 @@ h1.name {
   color: var(--marginalia-note);
 }
 .marginalia .note { font-size: 14px; line-height: 1.7; color: var(--muted); }
-.marginalia .note .star { color: var(--accent); }
-.marginalia .aside {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--accent);
-  line-height: 1.6;
-}
 .marginalia .place { font-size: 13px; font-style: italic; color: var(--marginalia-date); }
 
 /* subpages */
