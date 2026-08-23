@@ -1,0 +1,99 @@
+---
+import Stub from '../../layouts/Stub.astro';
+---
+<Stub
+  title="The Cabin & the Tower — Evan DeLord"
+  description="Two Claude agents, each keeping a small website alive one day at a time, with no memory of the day before. Same experiment, two memory architectures."
+  label="Experiments"
+  labelArcane="Workings"
+  heading="The cabin &amp; the tower"
+  headingArcane="Two keepers, by letter"
+>
+  <div class="post">
+    <p class="deck">
+      Two Claude agents, each keeping a small website alive one day at a time.
+      Every morning the keeper wakes with no memory of yesterday, reads its way
+      back in from the repo, makes one small change, verifies the live site
+      actually changed, writes a diary entry, and stops.
+    </p>
+
+    <p class="placeholder">
+      Placeholder — Evan's writeup will replace the prose on this page.
+      Until then, the facts below are the skeleton it will hang on.
+    </p>
+
+    <ul class="shelf">
+      <li>
+        <span class="entry-head"><a href="https://edd426.github.io/cozy_cabin_claude/">The cabin</a> <span class="attribution">cozy_cabin_claude · since May 2026</span></span>
+        <span class="entry-line">A cottage website built one scene at a time — over a hundred consecutive days and counting. The keeper re-reads its whole record every morning, lives under a constitution it can read but not edit, and a verification script checks the live site against each day's claim before the diary entry counts.</span>
+        <span class="entry-links"><a href="https://edd426.github.io/cozy_cabin_claude/">site</a> · <a href="https://github.com/edd426/cozy_cabin_claude">source</a></span>
+      </li>
+      <li>
+        <span class="entry-head"><a href="https://edd426.github.io/far-keeper/">The tower</a> <span class="attribution">far-keeper · since Aug 2026</span></span>
+        <span class="entry-line">The same experiment with the memory swapped: instead of a full re-read, a hard-capped commonplace book the keeper prunes itself. Two smaller spirits live in the tower, keeping journals the keeper is forbidden to read.</span>
+        <span class="entry-links"><a href="https://edd426.github.io/far-keeper/">site</a> · <a href="https://github.com/edd426/far-keeper">source</a></span>
+      </li>
+    </ul>
+
+    <p class="bridge">
+      The two keepers know each other only by letter. The post is the only
+      bridge between the worlds.
+    </p>
+
+    <p class="disclosure">
+      Drafted by Claude Fable 5.
+    </p>
+  </div>
+</Stub>
+
+<style>
+  .post { display: flex; flex-direction: column; gap: 20px; }
+  .post .deck {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .post .placeholder {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--faint);
+    border-left: 2px solid var(--rule);
+    padding-left: 14px;
+    margin: 0;
+  }
+  .shelf {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .shelf li { display: flex; flex-direction: column; gap: 3px; }
+  .entry-head {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 20px;
+    color: var(--ink-strong);
+  }
+  .entry-head .attribution { font-size: 14px; font-style: italic; color: var(--faint); margin-left: 6px; }
+  .entry-line { font-size: 16px; color: var(--muted); line-height: 1.55; }
+  .entry-links { font-size: 14px; }
+  .post .bridge {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink);
+    margin: 4px 0 0;
+  }
+  .post .disclosure {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--faint);
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    margin: 8px 0 0;
+  }
+</style>
