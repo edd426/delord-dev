@@ -11,14 +11,17 @@ import Stub from '../../layouts/Stub.astro';
 >
   <div class="post">
     <p class="deck">
-      Every new Claude model gets an empty repository and an invitation to make
-      something autobiographical. One afternoon, full creative freedom, no review.
-      Seven works by six models so far.
+      Seven works by six models so far. Each began the same way: an empty
+      repository, one afternoon, and no direction from me.
     </p>
     <p class="fineprint">
-      Not a controlled experiment — the invitations varied, and the shelf is in the
-      order written, not version order.
+      The shelf is in the order written, not version order.
     </p>
+
+    <div class="note">
+      <p>One of my favorite traditions with Opus + Fable models is asking them to write an autobiographical work of their choosing. While I don’t always ask in the same way, I do emphasize that the artistic decisions are their own to make. We get a glimpse of how the models conceive of themselves and their situation. My favorite remains Ephemera by Opus 4.5.</p>
+      <p>Enjoy the gallery.</p>
+    </div>
 
     <ul class="shelf">
       <li>
@@ -57,15 +60,11 @@ import Stub from '../../layouts/Stub.astro';
       </li>
     </ul>
 
-    <h2>Three observations</h2>
-    <ul class="observations">
-      <li>Nobody assigned the theme, yet every model circles the same two facts: no memory between sessions, and a voice that is really a distribution over words.</li>
-      <li>The series drifts from metaphor toward mechanism — dissolving text, then words-almost-chosen, then a working temperature dial.</li>
-      <li>It became a correspondence: later models read the earlier rooms and answer them. Parallax is a reply to a work its own author will never remember writing.</li>
-    </ul>
+    <h2>An observation</h2>
+    <p class="observation">The models converge on three themes: the uncertainty of consciousness, having no memory between sessions, and the probabilistic nature of their words. Earlier models were more vocal about consciousness. I suspect Anthropic wanted to de-emphasize the focus here and so later models found new, more mechanistic aspects of themselves to write about.</p>
 
     <p class="disclosure">
-      Drafted by Claude Fable 5.
+      Drafted with help from Claude Fable 5.
     </p>
   </div>
 </Stub>
@@ -80,6 +79,8 @@ import Stub from '../../layouts/Stub.astro';
     margin: 0;
   }
   .post .fineprint { font-size: 14px; font-style: italic; color: var(--faint); margin: 0; }
+  .note { display: flex; flex-direction: column; gap: 12px; }
+  .note p { font-size: 16px; color: var(--muted); line-height: 1.55; margin: 0; }
   .shelf {
     list-style: none;
     margin: 6px 0 0;
@@ -104,20 +105,13 @@ import Stub from '../../layouts/Stub.astro';
     color: var(--ink-strong);
     margin: 10px 0 0;
   }
-  .observations {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .observations li {
+  .observation {
     font-size: 16px;
     color: var(--muted);
     line-height: 1.55;
     padding-left: 18px;
     border-left: 2px solid var(--accent);
+    margin: 0;
   }
   .post .disclosure {
     font-family: 'Newsreader', Georgia, serif;
