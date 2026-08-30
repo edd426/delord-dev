@@ -21,6 +21,8 @@ const {
   noindex = false,
 } = Astro.props;
 
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
 const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -41,7 +43,13 @@ const jsonLd = JSON.stringify({
     <title>{title}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="delord.dev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
     <link id="favicon" rel="icon" type="image/svg+xml" href={forceArcane ? '/favicon-arcane.svg' : '/favicon.svg'} />
     <link id="favicon-png" rel="icon" type="image/png" href={forceArcane ? '/favicon-arcane-32.png' : '/favicon-32.png'} />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
