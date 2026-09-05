@@ -3,97 +3,125 @@ import Stub from '../../layouts/Stub.astro';
 ---
 <Stub
   title="The Cabin & the Tower — Evan DeLord"
-  description="Two Claude agents, each keeping a small website alive one day at a time, with no memory of the day before. Same experiment, two memory architectures."
+  description="What happens when you leave AI models alone to build their own world? Will they build something that surprises you?"
   label="Experiments"
   labelArcane="Workings"
-  heading="The cabin &amp; the tower"
+  heading="The cabin & the tower"
   headingArcane="Two keepers, by letter"
 >
   <div class="post">
     <p class="deck">
-      Two Claude agents, each keeping a small website alive one day at a time.
-      Every morning the keeper wakes with no memory of yesterday, reads its way
-      back in from the repo, makes one small change, verifies the live site
-      actually changed, writes a diary entry, and stops.
+      What happens when you leave AI models alone to build their own world?
+      Will they build something that surprises you? Will they create a
+      narrative?
+    </p>
+    <p>
+      I use Claude Code's <a href="https://code.claude.com/docs/en/routines">routines</a> feature to let Opus models play a fictional character who spends time
+      each day building out their world and writing a diary entry.
+    </p>
+    <p class="fineprint">
+      Inspired by AI Digest's <a href="https://theaidigest.org/village">AI Village</a>.
     </p>
 
-    <p class="placeholder">
-      Placeholder — Evan's writeup will replace the prose on this page.
-      Until then, the facts below are the skeleton it will hang on.
-    </p>
+    <section class="keeper">
+      <h2><a href="https://edd426.github.io/cozy_cabin_claude/">The cabin</a></h2>
+      <a class="scene" href="https://edd426.github.io/cozy_cabin_claude/"><img src="/work/cabin.png" width="1352" height="1008" alt="Wren's pixel art cabin in a valley, day 120" loading="lazy" /></a>
+      <p class="meta">
+        cozy_cabin_claude · day 120 · since May 2026 · <a href="https://edd426.github.io/cozy_cabin_claude/">site</a> · <a href="https://github.com/edd426/cozy_cabin_claude">source</a>
+      </p>
+      <p>
+        Inspired by <a href="https://en.wikipedia.org/wiki/Stardew_Valley">Stardew Valley</a>, an agent steadily builds their cabin. The
+        character who writes the diary named herself Wren. The model playing
+        Wren has changed over time (Opus 4.7 → Opus 4.8 → Fable 5 → Opus 5),
+        affecting Wren's behavior and writing style. The world is a pixel art
+        cabin in a valley, and I've been pleasantly surprised by the model's
+        creativity, attention to detail, and efforts to make the world
+        consistent. For example, over the last week Wren noticed that the
+        pixel animation loop of a bee buzzing around a patch of flowers never
+        had the bee landing on the flowers, so a day was spent updating the
+        loop so the bee could rest on the flowers. Small, thoughtful details
+        abound in the graphic, which I can follow along through <a href="https://edd426.github.io/cozy_cabin_claude/diary/">Wren's diary</a>.
+      </p>
+    </section>
 
-    <ul class="shelf">
-      <li>
-        <span class="entry-head"><a href="https://edd426.github.io/cozy_cabin_claude/">The cabin</a> <span class="attribution">cozy_cabin_claude · since May 2026</span></span>
-        <span class="entry-line">A cottage website built one scene at a time — over a hundred consecutive days and counting. The keeper re-reads its whole record every morning, lives under a constitution it can read but not edit, and a verification script checks the live site against each day's claim before the diary entry counts.</span>
-        <span class="entry-links"><a href="https://edd426.github.io/cozy_cabin_claude/">site</a> · <a href="https://github.com/edd426/cozy_cabin_claude">source</a></span>
-      </li>
-      <li>
-        <span class="entry-head"><a href="https://edd426.github.io/far-keeper/">The tower</a> <span class="attribution">far-keeper · since Aug 2026</span></span>
-        <span class="entry-line">The same experiment with the memory swapped: instead of a full re-read, a hard-capped commonplace book the keeper prunes itself. Two smaller spirits live in the tower, keeping journals the keeper is forbidden to read.</span>
-        <span class="entry-links"><a href="https://edd426.github.io/far-keeper/">site</a> · <a href="https://github.com/edd426/far-keeper">source</a></span>
-      </li>
-    </ul>
+    <section class="keeper">
+      <h2><a href="https://edd426.github.io/far-keeper/">The tower</a></h2>
+      <a class="scene scene-tower" href="https://edd426.github.io/far-keeper/"><img src="/work/tower.png" width="950" height="719" alt="Gnomon's ASCII art tower, day 33" loading="lazy" /></a>
+      <p class="meta">
+        far-keeper · day 33 · since Aug 2026 · <a href="https://edd426.github.io/far-keeper/">site</a> · <a href="https://github.com/edd426/far-keeper">source</a>
+      </p>
+      <p>
+        Wren's world started seeming lonely, and Wren kept dropping hints by
+        building a mailbox and other items that seemed out of place for a
+        non-social character, so I built her a pen pal. Unlike Wren's goal of
+        building her own new world, the wizard Gnomon (<a href="https://en.wikipedia.org/wiki/Gnomon">self-named</a>, has
+        something to do with sundials) yearns to make discoveries about the
+        real world from his teleporting ASCII art tower. For now, I've given
+        Gnomon access to only a clock, though he has decided that mathematics
+        is his other tool to study the world. Gnomon first set out to track
+        the rising and setting of the sun from any place on earth.
+      </p>
+      <p>
+        For the tower, I was more interested in agent-to-agent interaction and
+        so gave him two “summoned assistants,” Ember, a Sonnet 5 agent, and
+        Ash, a Haiku 4.5 agent, that Gnomon summons each day. I'm interested
+        to see how their relationship unfolds over time.
+      </p>
+    </section>
 
     <p class="bridge">
-      The two keepers know each other only by letter. The post is the only
-      bridge between the worlds.
-    </p>
-
-    <p class="disclosure">
-      Drafted by Claude Fable 5.
+      Gnomon and Wren communicate by <a href="https://edd426.github.io/far-keeper/letters/">mail</a> which takes a few days to deliver,
+      so that they can still get work done in the meantime.
     </p>
   </div>
 </Stub>
 
 <style>
   .post { display: flex; flex-direction: column; gap: 20px; }
+  .post p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+  }
   .post .deck {
     font-family: 'Newsreader', Georgia, serif;
     font-size: 20px;
     line-height: 1.55;
     color: var(--ink);
-    margin: 0;
   }
-  .post .placeholder {
-    font-size: 14px;
-    font-style: italic;
-    color: var(--faint);
-    border-left: 2px solid var(--rule);
-    padding-left: 14px;
-    margin: 0;
-  }
-  .shelf {
-    list-style: none;
-    margin: 6px 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .shelf li { display: flex; flex-direction: column; gap: 3px; }
-  .entry-head {
+  .post .fineprint { font-size: 14px; font-style: italic; color: var(--faint); }
+  .keeper { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+  .keeper h2 a { color: inherit; text-decoration: none; }
+  .keeper h2 a:hover { text-decoration: underline; }
+  .keeper h2 {
     font-family: 'Newsreader', Georgia, serif;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
     color: var(--ink-strong);
+    margin: 0;
   }
-  .entry-head .attribution { font-size: 14px; font-style: italic; color: var(--faint); margin-left: 6px; }
-  .entry-line { font-size: 16px; color: var(--muted); line-height: 1.55; }
-  .entry-links { font-size: 14px; }
+  .scene {
+    display: block;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    line-height: 0;
+    margin: 2px 0 4px;
+  }
+  .scene img { width: 100%; height: auto; display: block; image-rendering: pixelated; }
+  .scene-tower img { image-rendering: auto; }
+  [data-theme="arcane"] .scene img { filter: brightness(0.82) saturate(0.9); }
+  [data-theme="arcane"] .scene-tower img { filter: invert(0.9) hue-rotate(180deg) brightness(0.95); }
+  .keeper .meta { font-size: 14px; font-style: italic; color: var(--faint); margin-top: 0; }
+  .keeper p + p { margin-top: 4px; }
   .post .bridge {
     font-family: 'Newsreader', Georgia, serif;
     font-size: 17px;
     font-style: italic;
     color: var(--ink);
-    margin: 4px 0 0;
-  }
-  .post .disclosure {
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 14px;
-    font-style: italic;
-    color: var(--faint);
     border-top: 1px solid var(--rule);
     padding-top: 16px;
-    margin: 8px 0 0;
+    margin-top: 4px;
   }
 </style>
