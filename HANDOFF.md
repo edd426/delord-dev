@@ -45,6 +45,9 @@ Public record worth linking or citing (from LinkedIn, all public):
   and Adversarial Representation Learning for Continual Stream Mining" (few-shot
   metric learning, UT Dallas). The two neuroscience papers and the ALIFE paper
   are the natural citations for the "experiments on agents" framing.
+- Evan's honors capstone thesis at UT Austin was on the Big Five personality
+  traits (psychometrics, personality psychology). He sees it as a possible
+  tool for studying AI agents; it is not on LinkedIn or the resume.
 - LinkedIn has no About section (only Experience, Education, Skills,
   Publications, Courses, Honors), so the bio page will be the only long-form
   self-description Evan has online.
@@ -70,6 +73,11 @@ When the prose arrives:
    then verify the live page. Tick the BACKLOG.md bio item.
 
 ## Also on the table
+
+- Bio photo: a Google Photos album "Bio photo candidates" (created
+  2026-09-06, private) holds eight solo shots for Evan to choose from. The
+  strongest for a small portrait are the June 2025 headshots (maroon polo,
+  white wall, the LinkedIn photo session).
 
 - Social preview image (BACKLOG.md): base layout still has no `image` prop.
 - `/notes` exists unlinked until the first post ships.
