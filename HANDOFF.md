@@ -34,6 +34,24 @@ Decisions reached in the 2026-09-06 session, pending Evan's confirmation:
   with a plain hyphen, wrapped in `AuthorNote` or given the whole-article
   byline treatment per AGENTS.md.
 
+Public record worth linking or citing (from LinkedIn, all public):
+
+- Publications (four): ALIFE 14, 2014, "Structured Populations with Limited
+  Resources Exhibit Higher Rates of Complex Function Evolution" (self-replicating
+  programs, Wilke lab); Science Advances, May 2018, "A cerebellar adaptation to
+  uncertain inputs" (cerebellum simulation data); Journal of Neuroscience, Aug
+  2018, "Medial auditory thalamus is necessary for expression of auditory trace
+  eyelid conditioning" (cerebellum simulations); WWW '20, Apr 2020, "Few-Sample
+  and Adversarial Representation Learning for Continual Stream Mining" (few-shot
+  metric learning, UT Dallas). The two neuroscience papers and the ALIFE paper
+  are the natural citations for the "experiments on agents" framing.
+- LinkedIn has no About section (only Experience, Education, Skills,
+  Publications, Courses, Honors), so the bio page will be the only long-form
+  self-description Evan has online.
+- The Bosch role description on LinkedIn already says "using AI to automate
+  infrastructure tasks", so a one-line mention of AI work at the day job is
+  consistent with what recruiters can already see.
+
 Open questions for Evan:
 
 1. Mention the unpublished genetics games (Panthalassa, Herdloom)?
