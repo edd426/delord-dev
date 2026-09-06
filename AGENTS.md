@@ -41,6 +41,10 @@ reason to generate filler or create a large redesign backlog.
   attribute the depicted AI-generated artwork or linked experiments to Evan.
 - The policy's only bold prose is `by default, assume the words have come from
   AI models`. Do not italicize `substantive content`.
+- The signoff is `-Evan` with a plain ASCII hyphen, never an en dash or em dash.
+  Evan chose the hyphen deliberately: dashes read as AI-written. Do not "fix"
+  it typographically, in the component, in page markup, or in his prose.
+- Title case applies to the arcane-theme variants of headings too.
 
 ### Recorded authorship
 
@@ -51,7 +55,9 @@ reason to generate filler or create a large redesign backlog.
 - `src/pages/work/claude-autobiographies.astro`: the introduction beginning
   `One of my favorite traditions` (including `Enjoy the gallery.`) and the
   `An Observation` paragraph are Evan's. Commit `f052736` explicitly records
-  these passages as his words. The gallery and introductory deck are AI-written.
+  these passages as his words. The gallery and introductory deck are AI-written;
+  the page carries no separate AI-disclosure line because the policy makes AI
+  authorship the default.
 - `src/pages/work/cabin-and-tower.astro`: article prose is Evan's writeup,
   recorded by commit `8d7e1c6`, which replaced the AI placeholder. That record
   does not separately establish authorship of captions or metadata.

@@ -8,7 +8,7 @@ import AuthorNote from '../../components/AuthorNote.astro';
   label="Experiments"
   labelArcane="Workings"
   heading="The Claude Autobiographies"
-  headingArcane="Portraits, self-drawn"
+  headingArcane="Portraits, Self-Drawn"
 >
   <div class="post">
     <p class="deck">
@@ -71,9 +71,6 @@ import AuthorNote from '../../components/AuthorNote.astro';
 
     </AuthorNote>
 
-    <p class="disclosure">
-      Drafted with help from Claude Fable 5.
-    </p>
   </div>
 </Stub>
 
@@ -88,7 +85,7 @@ import AuthorNote from '../../components/AuthorNote.astro';
   }
   .post .fineprint { font-size: 14px; font-style: italic; color: var(--faint); margin: 0; }
   .note { display: flex; flex-direction: column; gap: 12px; }
-  .note p { font-size: 16px; color: var(--muted); line-height: 1.55; margin: 0; }
+  .note p { font-size: 16px; color: var(--ink); line-height: 1.55; margin: 0; }
   .shelf {
     list-style: none;
     margin: 6px 0 0;
@@ -118,14 +115,5 @@ import AuthorNote from '../../components/AuthorNote.astro';
     color: var(--muted);
     line-height: 1.55;
     margin: 0;
-  }
-  .post .disclosure {
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 14px;
-    font-style: italic;
-    color: var(--faint);
-    border-top: 1px solid var(--rule);
-    padding-top: 16px;
-    margin: 8px 0 0;
   }
 </style>
