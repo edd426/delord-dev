@@ -1,5 +1,6 @@
 ---
 import Stub from '../layouts/Stub.astro';
+import AuthorNote from '../components/AuthorNote.astro';
 ---
 <Stub
   title="Colophon — Evan DeLord"
@@ -8,6 +9,9 @@ import Stub from '../layouts/Stub.astro';
   heading="How this site is set"
   headingArcane="How this site is set"
 >
+  <AuthorNote>
+    <p>The website theme was largely chosen by asking Fable 5 to offer some designs in <a href="https://claude.com/product/design">Claude Design</a>. While the Anthropic theme and color are becoming more common, I'm a big fan of their terracotta color scheme. I've adopted it for my website because I like the warm colors and book paper-like quality of the background and the typography.</p>
+  </AuthorNote>
   <p>Set in <a href="https://fonts.google.com/specimen/Newsreader">Newsreader</a> for display and <a href="https://fonts.google.com/specimen/Source+Sans+3">Source Sans 3</a> for text, both self-hosted — this site makes no third-party requests and runs no trackers.</p>
   <p>Built with <a href="https://astro.build">Astro</a> as plain static pages, with almost no client-side JavaScript. Hosted on <a href="https://pages.cloudflare.com">Cloudflare Pages</a>.</p>
   <p>Source lives on <a href="https://github.com/edd426">GitHub, under edd426</a>.</p>

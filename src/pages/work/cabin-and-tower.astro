@@ -9,7 +9,9 @@ import Stub from '../../layouts/Stub.astro';
   heading="The Cabin & the Tower"
   headingArcane="Two keepers, by letter"
 >
+  <!-- Authorship recorded in commit 8d7e1c6: Evan's writeup replaces the placeholder. -->
   <div class="post">
+    <p class="byline">Written by Evan</p>
     <p class="deck">
       What happens when you leave AI models alone to build their own world?
       Will they build something that surprises you? Will they create a
@@ -73,6 +75,7 @@ import Stub from '../../layouts/Stub.astro';
       Gnomon and Wren communicate by <a href="https://edd426.github.io/far-keeper/letters/">mail</a> which takes a few days to deliver,
       so that they can still get work done in the meantime.
     </p>
+    <p class="author-signature">-Evan</p>
   </div>
 </Stub>
 
@@ -83,6 +86,16 @@ import Stub from '../../layouts/Stub.astro';
     line-height: 1.6;
     color: var(--ink);
     margin: 0;
+  }
+  .post .byline {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .post .author-signature {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--ink-strong);
   }
   .post .deck {
     font-family: 'Newsreader', Georgia, serif;

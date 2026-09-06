@@ -12,3 +12,13 @@
 - **Notes section.** Removed from the front page on 2026-09-06 because all three
   posts were still "forthcoming". `/notes` still exists, unlinked. Restore the row
   when the first post ships. (Added 2026-09-06.)
+
+- **Homepage after the bio and posts.** Reassess spacing and project visibility
+  once Evan's planned content exists. Consider short project descriptions or a
+  small existing project image. Do not fill the page with AI placeholder prose
+  merely to occupy space; preserve Evan's writing pace. (Added 2026-09-06.)
+
+- **Hidden theme influences.** Add Evan's explanation of the Lovecraft-inspired
+  games and books behind the arcane theme inside the hidden section. Keep the
+  theme intentionally undisclosed in normal recruiter-facing navigation.
+  Wait for Evan's specific influences and wording. (Added 2026-09-06.)

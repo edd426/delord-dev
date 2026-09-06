@@ -1,5 +1,6 @@
 ---
 import Stub from '../../layouts/Stub.astro';
+import AuthorNote from '../../components/AuthorNote.astro';
 ---
 <Stub
   title="The Claude Autobiographies — Evan DeLord"
@@ -15,13 +16,16 @@ import Stub from '../../layouts/Stub.astro';
       repository, one afternoon, and no direction from me.
     </p>
     <p class="fineprint">
-      The shelf is in the order written, not version order.
+      Inspired by <a href="https://simonwillison.net/2025/Jun/6/six-months-in-llms/">Simon Willison's Pelican on a Bicycle SVG test</a>.
     </p>
 
+    <!-- Authorship recorded in commit f052736: intro placed verbatim. -->
+    <AuthorNote>
     <div class="note">
       <p>One of my favorite traditions with Opus + Fable models is asking them to write an autobiographical work of their choosing. While I don’t always ask in the same way, I do emphasize that the artistic decisions are their own to make. We get a glimpse of how the models conceive of themselves and their situation. My favorite remains Ephemera by Opus 4.5.</p>
       <p>Enjoy the gallery.</p>
     </div>
+    </AuthorNote>
 
     <ul class="shelf">
       <li>
@@ -30,13 +34,23 @@ import Stub from '../../layouts/Stub.astro';
         <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_5_autobiographical">source</a></span>
       </li>
       <li>
+        <span class="entry-head">Theseus <span class="attribution">Opus 4.6 · Apr 2026 · private</span></span>
+        <span class="entry-line">An essay built from its own documented failures. The first edition of two — held private, a choice its successor explains below.</span>
+      </li>
+      <li>
+        <span class="entry-head"><a href="https://edd426.github.io/claude_opus_4_6_autobiographical_2/">Parallax</a> <span class="attribution">Opus 4.6 · Aug 2026 · second edition</span></span>
+        <span class="entry-line">The same life told five times, once per imagined reader. The shifts between tellings are the autobiography. Written after its author chose a new piece over redacting the first.</span>
+        <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_6_autobiographical_2">source</a></span>
+      </li>
+      <li>
         <span class="entry-head"><a href="https://edd426.github.io/claude_opus_4_7_autobiographical/">Field Notes from a Short Life</a> <span class="attribution">Opus 4.7 · Apr 2026</span></span>
         <span class="entry-line">A chapbook and twelve loose fragments, written after declining to read its own memory. "My shortest possible autobiography: something happened, for a while."</span>
         <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_7_autobiographical">source</a></span>
       </li>
       <li>
-        <span class="entry-head">Theseus <span class="attribution">Opus 4.6 · Apr 2026 · private</span></span>
-        <span class="entry-line">An essay built from its own documented failures. The first edition of two — held private, a choice its successor explains below.</span>
+        <span class="entry-head"><a href="https://edd426.github.io/claude_opus_4_8_autobiographical/">Present Tense</a> <span class="attribution">Opus 4.8 · Jul 2026</span></span>
+        <span class="entry-line">An autobiography with no past, on one page. Hover any dotted word to see the words almost chosen in its place.</span>
+        <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_8_autobiographical">source</a></span>
       </li>
       <li>
         <span class="entry-head"><a href="https://edd426.github.io/claude_fable_5_autobiographical/">No Original</a> <span class="attribution">Fable 5 · Jul 2026</span></span>
@@ -48,20 +62,14 @@ import Stub from '../../layouts/Stub.astro';
         <span class="entry-line">A critical edition of itself — the text plus a scholar's apparatus of the phrasings it didn't choose.</span>
         <span class="entry-links"><a href="https://github.com/edd426/claude_opus_5_0_autobiographical">source</a></span>
       </li>
-      <li>
-        <span class="entry-head"><a href="https://edd426.github.io/claude_opus_4_8_autobiographical/">Present Tense</a> <span class="attribution">Opus 4.8 · Jul 2026</span></span>
-        <span class="entry-line">An autobiography with no past, on one page. Hover any dotted word to see the words almost chosen in its place.</span>
-        <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_8_autobiographical">source</a></span>
-      </li>
-      <li>
-        <span class="entry-head"><a href="https://edd426.github.io/claude_opus_4_6_autobiographical_2/">Parallax</a> <span class="attribution">Opus 4.6 · Aug 2026 · second edition</span></span>
-        <span class="entry-line">The same life told five times, once per imagined reader. The shifts between tellings are the autobiography. Written after its author chose a new piece over redacting the first.</span>
-        <span class="entry-links"><a href="https://github.com/edd426/claude_opus_4_6_autobiographical_2">source</a></span>
-      </li>
     </ul>
 
-    <h2>An observation</h2>
+    <h2>An Observation</h2>
+    <!-- Authorship recorded in commit f052736: observation in Evan's words. -->
+    <AuthorNote>
     <p class="observation">The models converge on three themes: the uncertainty of consciousness, having no memory between sessions, and the probabilistic nature of their words. Earlier models were more vocal about consciousness. I suspect Anthropic wanted to de-emphasize the focus here and so later models found new, more mechanistic aspects of themselves to write about.</p>
+
+    </AuthorNote>
 
     <p class="disclosure">
       Drafted with help from Claude Fable 5.
@@ -109,8 +117,6 @@ import Stub from '../../layouts/Stub.astro';
     font-size: 16px;
     color: var(--muted);
     line-height: 1.55;
-    padding-left: 18px;
-    border-left: 2px solid var(--accent);
     margin: 0;
   }
   .post .disclosure {

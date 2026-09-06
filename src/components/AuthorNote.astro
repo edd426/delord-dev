@@ -1,0 +1,28 @@
+<section class="author-note" aria-label="Written by Evan">
+  <div class="author-note-body"><slot /></div>
+  <p class="author-signature">-Evan</p>
+</section>
+
+<style>
+  .author-note {
+    border-left: 2px solid var(--accent);
+    padding: 6px 0 6px 22px;
+    margin: 0 0 8px;
+  }
+  .author-note-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .author-note :global(p) { color: var(--ink); }
+  .author-note .author-signature {
+    margin: 16px 0 0;
+    font-family: 'Newsreader', Georgia, serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-strong);
+  }
+  @media (max-width: 600px) {
+    .author-note { padding-left: 16px; }
+  }
+</style>
