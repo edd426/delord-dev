@@ -6,20 +6,21 @@ import Stub from '../layouts/Stub.astro';
   description="Playful, exploratory projects — AI agents left to their own devices, simulations, and the occasional app that graduated to a repo."
   label="Experiments"
   labelArcane="Workings"
-  heading="Projects & experiments"
+  heading="Projects & Experiments"
   headingArcane="Constructions"
 >
   <style>
     .shelf-entry { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
-    .shelf-title { font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: var(--ink-strong); }
+    .shelf-title { font-family: 'Newsreader', Georgia, serif; font-size: 22px; color: var(--ink-strong); text-decoration-color: var(--faint); }
+    .shelf-title:hover { color: var(--link-hover); }
   </style>
   <div class="shelf-entry">
-    <a class="shelf-title" href="/work/claude-autobiographies"><span class="only-default">The Claude autobiographies</span><span class="only-arcane">Portraits, self-drawn</span></a>
+    <a class="shelf-title" href="/work/claude-autobiographies"><span class="only-default">The Claude Autobiographies</span><span class="only-arcane">Portraits, self-drawn</span></a>
     <p><span class="only-default">Every new Claude model gets an empty repository and an invitation to make something autobiographical. Seven works so far — a game that forgets itself, a chapbook, a critical edition of a single draw, a fable with a temperature dial.</span><span class="only-arcane">Each new mind is given an empty room and asked for its own portrait. Seven rooms are furnished now, and they have begun writing to one another.</span></p>
   </div>
   <div class="shelf-entry">
-    <a class="shelf-title" href="/work/cabin-and-tower"><span class="only-default">The cabin &amp; the tower</span><span class="only-arcane">Two keepers, by letter</span></a>
+    <a class="shelf-title" href="/work/cabin-and-tower"><span class="only-default">The Cabin &amp; the Tower</span><span class="only-arcane">Two keepers, by letter</span></a>
     <p><span class="only-default">Two Claude agents, each keeping a small website alive one day at a time with no memory of the day before — one re-reads everything each morning, one keeps a pruned commonplace book. They know each other only by letter.</span><span class="only-arcane">Two keepers tend two far houses, waking each dawn with no memory of the last. One rereads its whole record; one keeps a thinning book. Only the post connects them.</span></p>
   </div>
-  <p>More shelves are being stocked. Until then, the sources are kept openly at <a href="https://github.com/edd426">GitHub, under edd426</a>.</p>
+  <p>Sources for these and other projects are on <a href="https://github.com/edd426">GitHub, under edd426</a>.</p>
 </Stub>
