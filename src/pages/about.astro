@@ -14,7 +14,7 @@ import Stub from '../layouts/Stub.astro';
        Evan's request; the portrait and caption are not part of his text. -->
   <div class="post">
     <figure class="portrait">
-      <img src="/about/evan-amman.jpg" width="1320" height="1057" alt="Evan, in a cap and glasses, smiling and pouring coffee from a brass dallah on a sunlit café terrace, with Amman’s stone buildings behind" />
+      <img src="/about/evan-amman-wide.jpg" width="1320" height="1057" alt="Evan, in a cap and glasses, smiling and pouring coffee from a brass dallah on a sunlit café terrace, with Amman’s stone buildings behind" />
       <figcaption>Enjoying “Bedouin Coffee” in Amman, Jordan</figcaption>
     </figure>
     <p>I’m Evan DeLord. I started this site to share my thoughts and research on how AI behaves and how to better use it. My first exposure to agents and algorithms was <a href="https://direct.mit.edu/isal/proceedings/alife2014/26/129/99060">doing research at UT Austin</a> in the field of <a href="https://en.wikipedia.org/wiki/Artificial_life">artificial life</a>, which uses simulated organisms to study evolution. Later, I researched <a href="https://www.science.org/doi/10.1126/sciadv.aap9660">neural net simulations</a> of <a href="https://www.jneurosci.org/content/38/41/8831">the cerebellum</a> to better understand the principles of the brain.</p>
@@ -41,6 +41,7 @@ import Stub from '../layouts/Stub.astro';
     margin: 0;
   }
   .portrait {
+    max-width: 440px;
     margin: 4px 0 28px;
   }
   .portrait img { width: 100%; height: auto; display: block; border-radius: 2px; }
@@ -51,4 +52,7 @@ import Stub from '../layouts/Stub.astro';
     color: var(--faint);
   }
   [data-theme="arcane"] .portrait img { filter: brightness(0.82) saturate(0.9); }
+  @media (max-width: 600px) {
+    .portrait { max-width: none; }
+  }
 </style>

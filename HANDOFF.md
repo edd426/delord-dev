@@ -19,8 +19,8 @@ Last updated 2026-09-12 by Claude Fable 5.1.
 - `/about` is live with Evan's three paragraphs (verbatim from his Google Doc
   draft after three review passes), a `Written by Evan` byline, `-Evan` signoff,
   hyperlinks to his papers and the site's projects, and a portrait cropped from
-  a photo in Amman, Jordan (`public/about/evan-amman.jpg`, from the original
-  HEIC, metadata stripped). Linked from the shared footer beside Colophon and
+  a photo in Amman, Jordan (`public/about/evan-amman-wide.jpg`, Evan's own
+  landscape crop, metadata stripped; renamed once to bust a cached portrait). Linked from the shared footer beside Colophon and
   AI & Authorship; Evan chose the footer over a front-page row because the bio
   is site-level information, not a project. Authorship recorded in AGENTS.md.
 - Not used: the "Bio photo candidates" album headshots; Evan preferred the Amman
