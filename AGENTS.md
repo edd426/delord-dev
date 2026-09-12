@@ -33,9 +33,11 @@ reason to generate filler or create a large redesign backlog.
   mixed-authorship pages. It supplies a dark green left border in the default
   theme and an italic serif `-Evan` signoff. It uses the theme accent in arcane
   mode. Reserve this bordered passage style for authorship, not generic emphasis.
-- For a whole article written by Evan, use a discreet `Written by Evan` byline
-  and `-Evan` at the end. Do not put a continuous border around a long article
-  containing images and captions.
+- For a whole article written by Evan, the `-Evan` signoff at the end is the
+  attribution, matching the policy on `/authorship`. Do not add a `Written by
+  Evan` byline (one was added to cabin-and-tower on September 6, 2026 without
+  basis in the policy and removed on September 12), and do not put a continuous
+  border around a long article containing images and captions.
 - AI-written introductions, gallery descriptions, metadata, and technical notes
   remain outside signed passages. A byline for an article's prose does not
   attribute the depicted AI-generated artwork or linked experiments to Evan.
@@ -65,9 +67,8 @@ reason to generate filler or create a large redesign backlog.
   his Google Doc draft in the September 12, 2026 session after three review
   passes of individually accepted spot edits; placed verbatim. Hyperlinks were
   added by Claude at Evan's request. On September 12 Evan replaced `language`
-  with `culture` in the Budapest sentence and dropped the `Written by Evan`
-  byline as redundant with the signoff; the `-Evan` signoff alone attributes
-  this page. The portrait and caption are not his text.
+  with `culture` in the Budapest sentence. The portrait and caption are not
+  his text.
 
 ## Content and design conventions
 
