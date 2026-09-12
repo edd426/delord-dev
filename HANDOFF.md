@@ -54,6 +54,8 @@ Last updated 2026-09-12 by Claude Fable 5.1.
 ## Also on the table
 
 - Social preview image (BACKLOG.md): base layout still has no `image` prop.
-- `/notes` exists unlinked until the first post ships.
+- `/notes` exists unlinked until the first post ships. Two candidate first
+  posts are described in BACKLOG.md (review shape; sandbox holes), 2026-09-12;
+  data and status live in the agent_cost_optimization repo.
 - Gallery order check: Evan confirmed Fable 5 released before Opus 5, so the
   current shelf order is correct.
