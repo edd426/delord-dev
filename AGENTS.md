@@ -61,6 +61,11 @@ reason to generate filler or create a large redesign backlog.
 - `src/pages/work/cabin-and-tower.astro`: article prose is Evan's writeup,
   recorded by commit `8d7e1c6`, which replaced the AI placeholder. That record
   does not separately establish authorship of captions or metadata.
+- `src/pages/about.astro`: the three bio paragraphs are Evan's, supplied from
+  his Google Doc draft in the September 12, 2026 session after three review
+  passes of individually accepted spot edits; placed verbatim. Hyperlinks were
+  added by Claude at Evan's request. The byline, portrait, and caption are not
+  his text.
 
 ## Content and design conventions
 

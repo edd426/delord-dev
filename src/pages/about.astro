@@ -1,0 +1,65 @@
+---
+import Stub from '../layouts/Stub.astro';
+---
+<Stub
+  title="About Me — Evan DeLord"
+  description="Who is behind delord.dev: artificial life research, cerebellum simulations, personality psychology, and now experiments on how AI agents behave."
+  label="About"
+  labelArcane="Concerning"
+  heading="About Me"
+  headingArcane="Concerning the Author"
+>
+  <!-- Authorship: the three paragraphs below are Evan's words, supplied from his
+       draft on 2026-09-12 and placed verbatim. Hyperlinks were added by Claude at
+       Evan's request; the byline, portrait, and caption are not part of his text. -->
+  <div class="post">
+    <p class="byline">Written by Evan</p>
+    <figure class="portrait">
+      <img src="/about/evan-amman.jpg" width="640" height="800" alt="Evan, in a cap and glasses, smiling and pouring coffee from a brass dallah on a sunlit café terrace" loading="lazy" />
+      <figcaption>Amman, Jordan</figcaption>
+    </figure>
+    <p>I’m Evan DeLord. I started this site to share my thoughts and research on how AI behaves and how to better use it. My first exposure to agents and algorithms was <a href="https://direct.mit.edu/isal/proceedings/alife2014/26/129/99060">doing research at UT Austin</a> in the field of <a href="https://en.wikipedia.org/wiki/Artificial_life">artificial life</a>, which uses simulated organisms to study evolution. Later, I researched <a href="https://www.science.org/doi/10.1126/sciadv.aap9660">neural net simulations</a> of <a href="https://www.jneurosci.org/content/38/41/8831">the cerebellum</a> to better understand the principles of the brain. I wrote my undergraduate capstone thesis about the <a href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big Five personality traits</a> and how personality might extend beyond these traits into values, goals, and self-narrative. Overall I’m really interested in emergent properties of complex systems, like computation in the brain or evolutionary processes.</p>
+    <p>AI models have their own psychology and their own ways of communicating and interacting that are worth studying. We’re just beginning to understand what makes LLM-based AI tick and how to apply it. This site showcases my projects, built with <a href="https://claude.com/product/claude-code">Claude Code</a> and <a href="https://openai.com/codex/">Codex</a>, like <a href="/work/claude-autobiographies">the autobiography series</a> and <a href="/work/cabin-and-tower">the cabin and tower study</a>. Coding benchmarks are important, but trying to understand the models beyond benchmarks will matter for keeping AI helpful to humans.</p>
+    <p>I’ve worked six years as an MLOps engineer at Chevron in trading. I now work as a Senior Cloud Engineer at Bosch, where AI integration is a big part of my work. I’m also an amateur meditator and I enjoy discussing philosophy and future predictions at my local Rationalist meetup. At the moment, I’m enjoying Budapest’s unique language and ease of travel to the rest of Europe.</p>
+    <p class="author-signature">-Evan</p>
+  </div>
+</Stub>
+
+<style>
+  .post { display: flow-root; }
+  .post p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .post .byline {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .post .author-signature {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--ink-strong);
+    margin: 0;
+  }
+  .portrait {
+    float: right;
+    width: 200px;
+    margin: 4px 0 12px 28px;
+  }
+  .portrait img { width: 100%; height: auto; display: block; border-radius: 2px; }
+  .portrait figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--faint);
+    text-align: center;
+  }
+  [data-theme="arcane"] .portrait img { filter: brightness(0.82) saturate(0.9); }
+  @media (max-width: 600px) {
+    .portrait { float: none; width: 60%; max-width: 240px; margin: 0 auto 24px; }
+  }
+</style>
