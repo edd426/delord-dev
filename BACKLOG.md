@@ -43,3 +43,17 @@
      incident, where the escape went through the sandbox's one authorized
      outbound channel (Artifactory zero-day). Must say up front that our agents
      escaped nothing; the claim is about review coverage of a sandbox.
+  3. *Does a second model family earn its review slot?* Working question: do
+     GPT-lineage reviewers (Sol, Astra) find things Claude-lineage reviewers
+     do not, enough to justify the cross-lineage slot. Evidence so far is
+     suggestive but confounded: on the original 48-row key, 12 rows were found
+     only by GPT configs and 3 only by Claude swarms, but that key was built
+     from a Sol review plus one Opus review, so it is biased toward Sol by
+     construction; the extended key flipped the ranking. Solo noticing is
+     similar across families (Astra 39/48, Opus 38/48). Astra's severity
+     calls held against Fable's in the 2026-09-11 debate. Strengthening steps,
+     cheapest first: family-unique share of the 192 audited off-key REALs
+     (mechanical, queued 2026-09-12); a cross-lineage re-audit of a sample of
+     those REALs (Astra, ~6 codex pts); Astra as a verifier arm on the same
+     flag sets (~9 pts). Evan is also weighing other uses for Astra this
+     week. (Added 2026-09-12.)
