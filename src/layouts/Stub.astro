@@ -6,21 +6,22 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description: string;
-  label: string;
+  label?: string;
   labelArcane?: string;
   heading: string;
   headingArcane?: string;
 }
 
 const { title, description, label, labelArcane = label, heading, headingArcane = heading } = Astro.props;
+const hasLabel = Boolean(label);
 ---
 <Base title={title} description={description}>
   <div class="page">
     <div class="frame">
       <main class="main">
         <div class="brand"><a href="/">DeLord<span>.dev</span></a></div>
-        <div class="section-label" style="width: auto;"><span class="only-default">{label}</span><span class="only-arcane">{labelArcane}</span></div>
-        <h1 class="name" style="font-size: 40px; margin-top: 8px;"><span class="only-default">{heading}</span><span class="only-arcane">{headingArcane}</span></h1>
+        {hasLabel && <div class="section-label" style="width: auto;"><span class="only-default">{label}</span><span class="only-arcane">{labelArcane}</span></div>}
+        <h1 class="name" style={hasLabel ? "font-size: 40px; margin-top: 8px;" : "font-size: 40px; margin-top: 0;"}><span class="only-default">{heading}</span><span class="only-arcane">{headingArcane}</span></h1>
         <Fleur />
         <div class="stub">
           <slot />
