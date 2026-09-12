@@ -169,6 +169,7 @@ h1.name {
   font-size: 15px;
   flex-wrap: wrap;
 }
+.footer-group { display: flex; gap: 24px; }
 .footer .est {
   margin-left: auto;
   display: flex;
@@ -257,6 +258,9 @@ h1.name {
   .main { flex: 0 0 auto; max-width: none; min-height: 0; }
   .candle-toggle { padding: 12px; margin: -12px; }
   .footer { margin-top: 48px; row-gap: 14px; column-gap: 20px; }
+  /* deliberate two-row footer: outbound links, then site pages with the candle */
+  .footer-group:first-child { flex-basis: 100%; }
+  .footer-group { gap: 20px; }
   .marginalia {
     width: 100%;
     border-left: none;
