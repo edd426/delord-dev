@@ -64,8 +64,10 @@ reason to generate filler or create a large redesign backlog.
 - `src/pages/about.astro`: the three bio paragraphs are Evan's, supplied from
   his Google Doc draft in the September 12, 2026 session after three review
   passes of individually accepted spot edits; placed verbatim. Hyperlinks were
-  added by Claude at Evan's request. The byline, portrait, and caption are not
-  his text.
+  added by Claude at Evan's request. On September 12 Evan replaced `language`
+  with `culture` in the Budapest sentence and dropped the `Written by Evan`
+  byline as redundant with the signoff; the `-Evan` signoff alone attributes
+  this page. The portrait and caption are not his text.
 
 ## Content and design conventions
 
