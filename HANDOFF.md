@@ -44,8 +44,9 @@ Last updated 2026-09-12 by Claude Fable 5.1.
   setup was done through Evan's signed-in browser.
 - Outbound: Gmail "Send mail as" alias for evan@delord.dev through
   smtp.gmail.com with a Google App Password (stored in Evan's Apple Passwords),
-  verified 2026-09-12. Open: delord.dev's SPF record names only Cloudflare;
-  adding `include:_spf.google.com` would cover mail sent via Gmail.
+  verified 2026-09-12. SPF record updated the same day to
+  `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all` so mail
+  sent via Gmail is authorized. No DMARC record yet (Cloudflare recommends one).
 
 ## Also on the table
 
