@@ -46,7 +46,10 @@ Last updated 2026-09-12 by Claude Fable 5.1.
   smtp.gmail.com with a Google App Password (stored in Evan's Apple Passwords),
   verified 2026-09-12. SPF record updated the same day to
   `v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all` so mail
-  sent via Gmail is authorized. No DMARC record yet (Cloudflare recommends one).
+  sent via Gmail is authorized. DMARC added 2026-09-12, monitoring only:
+  `_dmarc.delord.dev TXT "v=DMARC1; p=none; rua=mailto:evan@delord.dev"`.
+  Do not raise the policy to quarantine/reject while replies go out through
+  Gmail's servers: they would fail DMARC alignment for delord.dev.
 
 ## Also on the table
 
