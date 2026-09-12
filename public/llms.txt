@@ -1,7 +1,7 @@
 # delord.dev
 
-Personal site of Evan DeLord: platform engineer, cloud infrastructure, AI
-hobbyist. The site collects experiments on how AI agents behave (/work), a bio
+Personal site of Evan DeLord: platform engineer, cloud infrastructure, and a
+hobbyist studying what makes AI models tick. The site collects experiments on how AI agents behave (/work), a bio
 (/about), and an authorship policy (/authorship) explaining which words are
 Evan's and which are AI-written. Static Astro site, no trackers, fonts
 self-hosted; source on GitHub (edd426).
