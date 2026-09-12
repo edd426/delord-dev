@@ -39,7 +39,7 @@ reason to generate filler or create a large redesign backlog.
   basis in the policy and removed on September 12), and do not put a continuous
   border around a long article containing images and captions.
 - AI-written introductions, gallery descriptions, metadata, and technical notes
-  remain outside signed passages. A byline for an article's prose does not
+  remain outside signed passages. A signoff on an article's prose does not
   attribute the depicted AI-generated artwork or linked experiments to Evan.
 - The policy's only bold prose is `by default, assume the words have come from
   AI models`. Do not italicize `substantive content`.
