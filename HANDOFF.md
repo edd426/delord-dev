@@ -16,19 +16,24 @@ Last updated 2026-09-12 by Claude Fable 5.1.
 
 ## Bio page: shipped 2026-09-12
 
-- `/about` is live with Evan's three paragraphs (verbatim from his Google Doc
-  draft after three review passes), a `Written by Evan` byline, `-Evan` signoff,
-  hyperlinks to his papers and the site's projects, and a portrait cropped from
-  a photo in Amman, Jordan (`public/about/evan-amman-wide.jpg`, Evan's own
-  landscape crop, metadata stripped; renamed once to bust a cached portrait). Linked from a small uppercase `About` marker top-right
-  on the front page only (Peta's feedback: visitors look for About in the
-  header, the footer is for outbound links). Not in the footer. Evan is
-  considering moving AI & Authorship up the same way. Authorship recorded in AGENTS.md.
-- Not used: the "Bio photo candidates" album headshots; Evan preferred the Amman
-  photo for its setting.
-- Mobile layout (portrait centered under 600px) was checked by CSS only; the
-  browser window resize did not take effect in the session. Worth a glance on a
-  phone.
+- `/about` is live with Evan's bio (five paragraphs, verbatim from his Google
+  Doc draft after three review passes; the two extra paragraph breaks were his
+  call), `-Evan` signoff, hyperlinks to his papers and the site's projects, and
+  his own landscape crop of a photo from Amman, Jordan
+  (`public/about/evan-amman-wide.jpg`, metadata stripped, capped at 440px on
+  desktop, full width on phones).
+- Navigation, after feedback from Peta: an uppercase `About Me` marker top
+  right on the front page only (arcane: `Concerning the Author`). The footer
+  holds outbound links (GitHub, LinkedIn, RSS) and site pages (Colophon, AI &
+  Authorship), grouped so it wraps into two deliberate rows on phones. Evan
+  considered moving AI & Authorship to the top as well; left in the footer.
+- Front-page tagline is Evan's: `Platform engineer. Cloud infrastructure. AI
+  hobbyist.` (arcane: `Dabbler in artificial minds.`). Meta description and
+  llms.txt updated to match.
+- The `Written by Evan` byline is gone site-wide; the `-Evan` signoff is the
+  attribution per `/authorship`. AGENTS.md rule corrected.
+- Open: Evan said he does not really do MLOps, but his bio still says "six
+  years as an MLOps engineer at Chevron". His prose, his call; not changed.
 
 ## Also on the table
 
