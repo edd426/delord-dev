@@ -42,6 +42,10 @@ Last updated 2026-09-12 by Claude Fable 5.1.
   SPF records managed by Cloudflare). Linked from the footer's outbound group
   and in the Person JSON-LD. No Cloudflare API credentials exist locally; the
   setup was done through Evan's signed-in browser.
+- Outbound: Gmail "Send mail as" alias for evan@delord.dev through
+  smtp.gmail.com with a Google App Password (stored in Evan's Apple Passwords),
+  verified 2026-09-12. Open: delord.dev's SPF record names only Cloudflare;
+  adding `include:_spf.google.com` would cover mail sent via Gmail.
 
 ## Also on the table
 
