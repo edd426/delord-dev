@@ -35,6 +35,14 @@ Last updated 2026-09-12 by Claude Fable 5.1.
 - Open: Evan said he does not really do MLOps, but his bio still says "six
   years as an MLOps engineer at Chevron". His prose, his call; not changed.
 
+## Contact address: set up 2026-09-12
+
+- `evan@delord.dev` forwards to Evan's Gmail via Cloudflare Email Routing
+  (dashboard: Email Routing > delord.dev; one rule, catch-all disabled, MX and
+  SPF records managed by Cloudflare). Linked from the footer's outbound group
+  and in the Person JSON-LD. No Cloudflare API credentials exist locally; the
+  setup was done through Evan's signed-in browser.
+
 ## Also on the table
 
 - Social preview image (BACKLOG.md): base layout still has no `image` prop.
